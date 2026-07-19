@@ -1,0 +1,17 @@
+{
+  "name": "music-backend",
+  "version": "1.0.0",
+  "description": "API para site de streaming musical (estilo Spotify/Tidal)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "import-music": "node scripts/importMusic.js",
+    "update-db": "node scripts/updateDatabase.js",
+    "fill-db": "node scripts/fillDatabase.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "cors": "^2.8.5"
+  }
+}
