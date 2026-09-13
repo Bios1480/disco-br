@@ -6,6 +6,16 @@ const fs = require('fs');
 const catalogRoutes = require('./routes/catalog');
 const playlistRoutes = require('./routes/playlists');
 const activityRoutes = require('./routes/activity');
+const db = require('./db/connection');
+
+const debugTrack = db.prepare(`
+    SELECT id, title, cover_url
+    FROM tracks
+    WHERE title = 'Beneath the Mask'
+`).get();
+
+console.log('🔴 DEBUG DATABASE:');
+console.log(debugTrack);
 
 const app = express();
 const PORT = process.env.PORT || 3000;
