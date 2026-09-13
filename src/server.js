@@ -9,9 +9,6 @@ const activityRoutes = require('./routes/activity');
 const db = require('./db/connection');
 
 
-
-const fs = require('fs');
-
 const dbPath = path.join(__dirname, 'db', 'music.db');
 
 console.log('🔴 ===== DEBUG SQLITE =====');
