@@ -8,6 +8,29 @@ const playlistRoutes = require('./routes/playlists');
 const activityRoutes = require('./routes/activity');
 const db = require('./db/connection');
 
+
+
+console.log('🔴 ===== DEBUG SQLITE =====');
+console.log('Ruta DB:', dbPath);
+console.log('Existe DB:', fs.existsSync(dbPath));
+
+if (fs.existsSync(dbPath)) {
+    const stats = fs.statSync(dbPath);
+
+    console.log('Tamaño DB:', stats.size, 'bytes');
+    console.log('Fecha modificación:', stats.mtime);
+
+    const track = db.prepare(`
+        SELECT id, title, cover_url
+        FROM tracks
+        WHERE title = 'Beneath the Mask'
+    `).get();
+
+    console.log('Registro encontrado:', track);
+}
+
+console.log('🔴 ========================');
+
 const debugTrack = db.prepare(`
     SELECT id, title, cover_url
     FROM tracks
