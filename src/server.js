@@ -10,6 +10,10 @@ const db = require('./db/connection');
 
 
 
+const fs = require('fs');
+
+const dbPath = path.join(__dirname, 'db', 'music.db');
+
 console.log('🔴 ===== DEBUG SQLITE =====');
 console.log('Ruta DB:', dbPath);
 console.log('Existe DB:', fs.existsSync(dbPath));
