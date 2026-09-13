@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS tracks (
   audio_url     TEXT NOT NULL,
   track_number  INTEGER,
   genre TEXT,
-  cover_url TEXT
+  cover_url TEXT,
   FOREIGN KEY (album_id) REFERENCES albums(id) ON DELETE CASCADE
 );
 
